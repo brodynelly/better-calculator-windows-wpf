@@ -1,0 +1,55 @@
+<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="250">
+    <Grid Background="#FF282828" Height="384">
+        <!-- for row lay out -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+
+        <!-- for column lay out -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122*" AllowDrop="False"/>
+            <ColumnDefinition Width="149*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="115*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="Operation" VerticalAlignment="Center" Grid.ColumnSpan="4" Margin="10,0,10,0" Height="100" FontWeight="Bold" Background="#FFA2AF77" />
+
+        <!-- Button layout for content -->
+        <Button x:Name="inputSeven" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="7" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputFour" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="4" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputOne" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="1" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputEight" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="8" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputFive" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="5" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputTwo" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="2" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputNine" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="9" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputSix" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="6" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputThree" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="3" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+
+        <Button x:Name="inputMinus" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="OperationButton_Click" Height="32" Width="56" Content="-" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputAdd" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Click="OperationButton_Click" Height="32" Width="56" Content="+" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="62,0,0,0" />
+
+        <Button x:Name="inputEqual" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" Click="EqualsButton_Click" Width="56" Content="=" Background="#FFF15A2B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" Margin="0,10,0,2" Grid.RowSpan="2" />
+
+        <!-- Renamed and swapped logic: inputZero is 0, inputPeriod is . -->
+        <Button x:Name="inputZero" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="NumberButton_Click" Height="32" Width="121" Content="0" Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="2,0,0,0" />
+        <Button x:Name="inputPeriod" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="NumberButton_Click" Height="32" Width="56" Content="." Background="#FF58595B" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+
+        <Button x:Name="inputMc" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ClearButton_Click" Height="32" Width="56" Content="MC" Background="#FF130F10" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputMPlus" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Click="OperationButton_Click" Width="56" Content="M+" Background="#FF130F10" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" Margin="0,10,0,11" />
+        <Button x:Name="inputDivide" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Click="OperationButton_Click" Height="32" Width="56" Content="/"  Background="#FF130F10" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+        <Button x:Name="inputMultiply" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="OperationButton_Click" Height="32" Width="56" Content="X"  Background="#FF130F10" Foreground="#FFD9DADA" BorderThickness="0,1,1,1" FontWeight="Bold" FontSize="20" />
+    </Grid>
+</Window>

@@ -1,51 +1,41 @@
+# Calculator App
 
-# Calculator (WPF)
+A simple WPF Calculator application written in C#.
 
-A lightweight desktop calculator application built using **Windows Presentation Foundation (WPF)** and **C#**. This project serves as a simple demonstration of MVVM-friendly UI structure, event handling, and basic arithmetic functionality in a desktop environment.
+## Architecture
 
----
+The application is refactored to separate the UI logic from the calculation logic.
 
-## 🧠 Features
+- **src/Calculator**: The main WPF application.
+  - `MainWindow.xaml`: The user interface.
+  - `Logic/CalculatorEngine.cs`: The core calculation logic.
+- **tests/Calculator.Tests**: Unit tests for the application.
 
-- Basic arithmetic operations: Add, Subtract, Multiply, Divide  
-- Clean and responsive WPF layout  
-- Keyboard and button input support  
-- Simple XAML-based UI with code-behind logic  
+## Getting Started
 
----
+### Prerequisites
 
-## 📁 Project Structure
+- .NET 8.0 SDK or later.
 
-- `App.xaml` / `App.xaml.cs` – Application entry point and global resource definitions  
-- `MainWindow.xaml` / `MainWindow.xaml.cs` – UI layout and event logic for the calculator  
-- `Calculator.csproj` – Project configuration file  
-- `Calculator.sln` – Visual Studio solution file  
+### Building
 
----
+```bash
+dotnet build
+```
 
-## 🚀 Getting Started
+### Running Tests
 
-To run this application locally:
+```bash
+dotnet test
+```
 
-1. Clone the repository  
-2. Open `Calculator.sln` in Visual Studio  
-3. Press `F5` or click **Start Debugging**
+## Contributing
 
----
+Please follow the naming conventions:
+- **C#**: PascalCase for classes/methods, camelCase for fields/locals.
+- **Branches**: `{type}/{scope}-{desc}` (e.g., `feat/ui-redesign`).
+- **Commits**: Conventional Commits.
 
-## 📸 Screenshot
+## License
 
-![Screenshot](Screenshot%202025-02-26%20095356.png)
-
----
-
-## 🛠 Requirements
-
-- .NET Desktop Runtime (6.0 or later)  
-- Visual Studio 2022+ with WPF support enabled
-
----
-
-## 📄 License
-
-This project is released under the MIT License.
+MIT
