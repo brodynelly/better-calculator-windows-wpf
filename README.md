@@ -4,6 +4,14 @@
 
 A simple WPF Calculator application written in C#.
 
+
+## Tech Stack
+
+- **C# / .NET 8** — application logic
+- **WPF** — Windows Presentation Foundation UI
+- **NUnit** — unit testing
+
+
 ## Architecture
 
 The application is refactored to separate the UI logic from the calculation logic.
